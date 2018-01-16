@@ -17,5 +17,13 @@
             "2.europe.pool.ntp.org"
             "3.europe.pool.ntp.org"
         ];
+        networkmanager = {
+            enable = true;
+            insertNameservers = config.networking.nameservers;
+            packages =  with pkgs; [
+                networkmanager_l2tp
+                networkmanager_openvpn
+            ];
+        };
     };
 }
