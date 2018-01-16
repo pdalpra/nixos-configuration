@@ -4,7 +4,10 @@
     programs = {
         bash.enableCompletion = true;
         vim.defaultEditor = true;
-        zsh.enable = true;
+        zsh = {
+            enable     = true;
+            promptInit = "";
+        };
     };
 
     environment.systemPackages = with pkgs; [
