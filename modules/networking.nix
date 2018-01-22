@@ -1,6 +1,11 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
-{
+let
+    vpn_configs_root = /etc/vpn_configs;
+    contents = builtins.readDir vpn_configs_root;
+    candidateDirs = builtins.attrNames (builib.filterAttrs (path: type: type == "directory") contents);
+    configDirs = builtins.filter (path: builtins.pathExists path/config.ovpn)  (builtins.map builtins.toPatg candidateDirs);
+in {
     networking = {
         firewall.enable = false;
         extraHosts = ''
@@ -25,5 +30,15 @@
                 networkmanager_openvpn
             ];
         };
+    };
+
+    config = lib.mkIf builtins.length configDirs > 0 {
+        let
+            vpnConfig = { path }:
+                {
+                    "${path}".autoStart = false;
+                    "${path}".config    = builtins.readFile path; 
+                }
+        in map vpnConfig configDirs;
     };
 }
