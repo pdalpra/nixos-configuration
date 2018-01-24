@@ -36,6 +36,7 @@ with lib;
               DEBUG_KERNEL             y
               DEBUG_WX                 y
               CC_STACKPROTECTOR        y
+              CC_STACKPROTECTOR_REGULAR n
               CC_STACKPROTECTOR_STRONG y
               KEXEC                    n
               STRICT_DEVMEM            y
