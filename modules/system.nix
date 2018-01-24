@@ -9,7 +9,7 @@
     boot = {
         hardwareScan   = true;
         tmpOnTmpfs     = true;
-        kernelPackages = pkgs.linuxPackages_latest;
+        kernelPackages = pkgs.linuxPackages_4_14;
     };
 
     environment = {
