@@ -27,38 +27,36 @@ with lib;
     nixpkgs.config.packageOverrides = pkgs: {
         linux_4_14 = pkgs.linux_4_14.override {
             extraConfig = ''
-              BINFMT_MISC              n
-              LEGACY_PTYS              n
-              INET_DIAG                n
-              COMPAT_VDSO              n
-              COMPAT_BRK               n
-              BUG                      y
-              DEBUG_KERNEL             y
-              DEBUG_WX                 y
-              CC_STACKPROTECTOR        y
+              ACPI_CUSTOM_METHOD        n
+              BUG                       y
+              BUG_ON_DATA_CORRUPTION    y
+              CC_STACKPROTECTOR         y
               CC_STACKPROTECTOR_REGULAR n
-              CC_STACKPROTECTOR_STRONG y
-              KEXEC                    n
-              STRICT_DEVMEM            y
-              DEBUG_CREDENTIALS        y
-              DEBUG_NOTIFIERS          y
-              DEBUG_LIST               y
-              DEBUG_SG                 y
-              BUG_ON_DATA_CORRUPTION   y
-              SCHED_STACK_END_CHECK    y
-              IO_STRICT_DEVMEM         y
-              PROC_KCORE               n
-              ACPI_CUSTOM_METHOD       n
-              FORTIFY_SOURCE           y
-              REFCOUNT_FULL            y
-              SLAB_FREELIST_RANDOM     y
-              SLAB_HARDENED            y
-              SLUB_DEBUG               y
-              DEVKMEM                  n
-              HIBERNATION              n
-              HARDENED_USERCOPY        y
-              LEGACY_VSYSCALL_NONE     y
-              IA32_EMULATION           n
+              CC_STACKPROTECTOR_STRONG  y
+              COMPAT_BRK                n
+              DEBUG_CREDENTIALS         y
+              DEBUG_KERNEL              y
+              DEBUG_LIST                y
+              DEBUG_NOTIFIERS           y
+              DEBUG_SG                  y
+              DEBUG_WX                  y
+              DEVKMEM                   n
+              FORTIFY_SOURCE            y
+              HARDENED_USERCOPY         y
+              HIBERNATION               n
+              IA32_EMULATION            n
+              INET_DIAG                 n
+              IO_STRICT_DEVMEM          y
+              KEXEC                     n
+              LEGACY_PTYS               n
+              LEGACY_VSYSCALL_NONE      y
+              SCHED_STACK_END_CHECK     y
+              SECURITY_SELINUX_DISABLE  n
+              STRICT_DEVMEM             y
+              PROC_KCORE                n
+              REFCOUNT_FULL             y
+              SLAB_FREELIST_RANDOM      y
+              SLUB_DEBUG                y
             '';
         };
     };
