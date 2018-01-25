@@ -50,13 +50,13 @@ with lib;
               KEXEC                     n
               LEGACY_PTYS               n
               LEGACY_VSYSCALL_NONE      y
-              SCHED_STACK_END_CHECK     y
-              SECURITY_SELINUX_DISABLE  n
-              STRICT_DEVMEM             y
               PROC_KCORE                n
               REFCOUNT_FULL             y
+              SCHED_STACK_END_CHECK     y
+              SECURITY_SELINUX_DISABLE  n
               SLAB_FREELIST_RANDOM      y
               SLUB_DEBUG                y
+              STRICT_DEVMEM             y
             '';
         };
     };
