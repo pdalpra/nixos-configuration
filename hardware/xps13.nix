@@ -15,6 +15,10 @@
         ];
     };
 
+    environment.systemPackages = with pkgs; [
+        nvme-cli
+    ];
+
     hardware = {
         bluetooth.enable = true;
     };
