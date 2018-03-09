@@ -4,7 +4,6 @@
     imports = [
         ../types/desktop.nix
         ../modules/dev.nix
-        ../modules/hardened.nix
     ];
 
     boot = {
