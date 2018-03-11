@@ -31,7 +31,10 @@
             SOUND_POWER_SAVE_ON_BAT = 300
         '';
         xserver = {
-            synaptics.enable = true;
+            synaptics = {
+              enable          = true;
+              twoFingerScroll = true;
+            };
             videoDrivers = ["intel"];
             vaapiDrivers = [pkgs.vaapiIntel];
             inputClassSections = [
@@ -41,14 +44,6 @@
                     Driver "evdev"
                     Option "XkbLayout"  "fr"
                     Option "XkbVariant" ""
-                ''
-                ''
-                    Identifier "trackpad"
-                    MatchisTouchPad "on"
-                    Driver "libinput"
-                    Option "AccelSpeed"       "1"
-                    Option "VertScrollDelta"  "-111"
-                    Option "HorizScrollDelta" "-111"
                 ''
             ];
         };
