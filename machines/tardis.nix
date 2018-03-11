@@ -25,34 +25,30 @@
     time.timeZone = "Europe/Paris";
 
     fileSystems = {
+        "/" = {
+            device  = "/dev/mapper/lvm-root";
+            options = ["rw" "noatime" "nodiratime" "data=ordered"];
+        };
         "/boot" = {
             device  = "/dev/nvme0n1p1";
-            fsType  = "vfat";
             options = [
-                "rw" "noatime" "nodiratime" "data=orderedrw" "fmask=0022" "dmask=0022"
+                "rw" "noatime" "nodiratime" "fmask=0022" "dmask=0022"
                 "codepage=437" "iocharset=iso8859-1" "shortname=mixed" "errors=remount-ro"
             ];
         };
-        "/" = {
-            device  = "/dev/mapper/lvm-root";
-            fsType  = "ext4";
-            options = ["rw" "noatime" "nodiratime" "data=ordered"];
-        };
         "/home" = {
             device  = "/dev/mapper/lvm-home";
-            fsType  = "ext4";
             options = ["rw" "noatime" "nodiratime" "data=ordered" "nofail"];
         };
         "/var/lib/docker" = {
             device  = "/dev/mapper/lvm-docker";
-            fsType  = "ext4";
             options = ["rw" "noatime" "nodiratime" "data=ordered" "nofail"];
         };
     };
 
     swapDevices = [
         {
-            device = " /dev/mapper/lvm-swap";
+            device = "/dev/mapper/lvm-swap";
         }
     ];
 }
