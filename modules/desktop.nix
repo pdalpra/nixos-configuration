@@ -2,6 +2,8 @@
 
 {
     services = {
+        gnome3.gnome-keyring.enable = true;
+
         xserver = {
             enable = true;
             exportConfiguration = true;
@@ -9,11 +11,9 @@
                 default = "i3";
                 i3.enable = true;
             };
-            displayManager = {
-                slim = {
-                    enable = true;
-                    defaultUser = "pdalpra";
-                };
+            displayManager.slim = {
+                enable = true;
+                defaultUser = "pdalpra";
             };
         };
     };
