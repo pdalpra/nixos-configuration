@@ -6,8 +6,8 @@
     ];
 
     boot = {
-        kernelModules = [ "kvm-intel" ];
-        initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
+        kernelModules = ["kvm-intel"];
+        initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc"];
         blacklistedKernelModules = [
             "psmouse"
             "me" "mei_me"
@@ -23,6 +23,7 @@
 
     hardware = {
         bluetooth.enable = true;
+        opengl.extraPackages = [pkgs.vaapiIntel];
     };
 
     services = {
@@ -31,12 +32,12 @@
             SOUND_POWER_SAVE_ON_BAT = 300
         '';
         xserver = {
+            dpi = 125;
             synaptics = {
-              enable          = true;
-              twoFingerScroll = true;
+                enable          = true;
+                twoFingerScroll = true;
             };
             videoDrivers = ["intel"];
-            vaapiDrivers = [pkgs.vaapiIntel];
             inputClassSections = [
                 ''
                     Identifier "Generic Keyboard"
