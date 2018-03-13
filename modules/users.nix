@@ -10,17 +10,19 @@
                 initialPassword = "password";
                 shell           = pkgs.zsh;
                 extraGroups     = [
-                    "wheel"
-                    "docker"
                     "audio"
+                    "docker"
+                    "network"
                     "video"
                     "vboxusers"
+                    "wheel"
                 ];
             };
         };
     };
 
     security = {
+        polkit.enable = true;
         sudo = {
             enable             = true;
             wheelNeedsPassword = false;
