@@ -17,6 +17,7 @@
         bash
         curl
         cryptsetup
+        file
         git
         htop
         links
