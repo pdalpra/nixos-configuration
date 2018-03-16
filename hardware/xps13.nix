@@ -28,6 +28,8 @@
 
     services = {
         tlp.extraConfig = ''
+            CPU_SCALING_GOVERNOR_ON_AC=powersave
+            CPU_SCALING_GOVERNOR_ON_BAT=powersave
             SOUND_POWER_SAVE_ON_AC = 300
             SOUND_POWER_SAVE_ON_BAT = 300
         '';
