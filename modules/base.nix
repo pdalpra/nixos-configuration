@@ -26,6 +26,7 @@
         psmisc pstree
         tree
         uptimed
+        usbutils
         vcsh
         vim
         wget
