@@ -7,9 +7,10 @@
     };
 
     boot = {
-        hardwareScan   = true;
-        tmpOnTmpfs     = true;
-        kernelPackages = pkgs.linuxPackages_4_14;
+        earlyVconsoleSetup = true;
+        hardwareScan       = true;
+        tmpOnTmpfs         = true;
+        kernelPackages     = pkgs.linuxPackages_4_14;
     };
 
     environment = {
