@@ -10,7 +10,7 @@
         earlyVconsoleSetup = true;
         hardwareScan       = true;
         tmpOnTmpfs         = true;
-        kernelPackages     = pkgs.linuxPackages_4_14;
+        kernelPackages     = pkgs.linuxPackages_4_15;
     };
 
     environment = {
