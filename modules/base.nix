@@ -11,27 +11,20 @@
     };
 
     environment.systemPackages = with pkgs; [
-        aspell
-        aspellDicts.en
-        aspellDicts.fr
-        bash
-        curl
+        aspell aspellDicts.en aspellDicts.fr
+        bash zsh
+        curl wget links
         cryptsetup
         file
         git
-        htop
-        links
         mr
-        ncdu
-        psmisc pstree
+        htop ncdu psmisc pstree
         tree
         uptimed
         usbutils
         vcsh
         vim
-        wget
         zip unzip
-        zsh
     ];
 
     i18n = {
