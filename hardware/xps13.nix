@@ -13,7 +13,10 @@
             "me" "mei_me"
         ];
         kernelParams = [
+            "i915.enable_psr=0"
             "i915.enable_rc6=1"
+            "i915.enable_guc_loading=1"
+            "i915.enable_guc_submission=1"
         ];
     };
 
