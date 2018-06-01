@@ -2,7 +2,7 @@
 
 {
     system = {
-        stateVersion = "17.09";
+        stateVersion = "18.03";
         autoUpgrade.enable = false;
     };
 
